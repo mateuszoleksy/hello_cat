@@ -1,6 +1,6 @@
 # hello_cat
 Hello-cat project
-The "Hello Cat" project is based on Arduino, specifically using the Atmega328P microcontroller. The circuit includes the following components:
+The "Hello Cat" project is based on Arduino, specifically using the Atmega328P microcontroller. The project represents automatic feeding machine for cats/dogs. The circuit includes the following components:
 
 - HC-05 Bluetooth module
 - 220 ohm resistor
@@ -18,3 +18,5 @@ A voltage divider made from the 22k ohm and 10k ohm resistors reduces the voltag
 The servo is connected to pin 8 on the Arduino, and the limit switch is connected to pin 2. The servo’s power and ground are supplied by a separate 5V, 1000A power supply.
 
 This project demonstrates the use of an Arduino to control a servo and communicate wirelessly via Bluetooth, with additional safety and signaling components included in the circuit.
+
+I created app in Android Studio to manage feeding schedule of Cat.
