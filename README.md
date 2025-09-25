@@ -19,4 +19,5 @@ The servo is connected to pin 8 on the Arduino, and the limit switch is connecte
 
 This project demonstrates the use of an Arduino to control a servo and communicate wirelessly via Bluetooth, with additional safety and signaling components included in the circuit.
 
-I created app in Android Studio to manage feeding schedule of Cat.
+I created app in Android Studio to manage feeding schedule of Cat. Something like this:
+<img width="383" height="687" alt="image" src="https://github.com/user-attachments/assets/5a59b48f-08d8-4230-892e-76080338b5c7" />
