@@ -1,26 +1,31 @@
-# hello_cat
-2018's Hello-cat project
-The "Hello Cat" project is based on Arduino, specifically using the Atmega328P microcontroller. The project represents automatic feeding machine for cats/dogs. The circuit includes the following components:
+# Hello Cat – Automated Pet Feeder (2018)
 
-- HC-05 Bluetooth module
-- 220 ohm resistor
-- 22k ohm resistor
-- 10k ohm resistor
-- MG995 servo
-- Limit switch
-- Green LED
-- ON/OFF switch
+**Hello Cat** is an IoT pet-feeding system built on the ATmega328P (Arduino) platform. Designed for automated cat and dog feeding, the device receives schedule triggers and manual commands over Bluetooth via a dedicated Android application to operate a dispensing servo motor.
 
-A schematic of the circuit can be found in the folder containing this file. In the diagram, the Arduino’s 5V pin is connected in series to the limit switch. When the switch is pressed, current flows to the LED resistor and then to the HC-05 Bluetooth module. The GND connection from the HC-05 module is routed through a black wire that passes through a 22k ohm resistor and finally to the Arduino’s ground.
+### Key Features
+* **Custom Android Management App:** Set feeding schedules, adjust dispensing times, and manually trigger feed cycles from a smartphone interface.
+* **Bluetooth Connectivity:** Wireless communication using the HC-05 Bluetooth module operating over UART (SoftwareSerial).
+* **High-Torque Servo Mechanism:** Uses an MG995 servo motor powered by an external supply to control the feeding dispenser hatch.
+* **Limit Switch & Signal Feedback:** Integrated limit switch on pin 2 paired with a status LED for feedback during operation.
+* **Hardware Protection & Logic:** Custom resistor voltage divider ($22\,\text{k}\Omega$ / $10\,\text{k}\Omega$) on the RX line to match logic signal levels for the HC-05.
 
-A voltage divider made from the 22k ohm and 10k ohm resistors reduces the voltage to 1.56V, which is then supplied to the HC-05 module. The Arduino’s pin 10 is connected to the TXD pin of the Bluetooth module, while pin 11 is connected to the voltage divider, which then leads to the RXD pin of the HC-05.
+---
 
-The servo is connected to pin 8 on the Arduino, and the limit switch is connected to pin 2. The servo’s power and ground are supplied by a separate 5V, 1000A power supply.
+### App Interface
 
-This project demonstrates the use of an Arduino to control a servo and communicate wirelessly via Bluetooth, with additional safety and signaling components included in the circuit.
-
-<div style="align-items: center;">
-<p>I created app in Android Studio to manage feeding schedule of Cat. Something like this:</p>
-
-<img width="383" height="687" alt="image" src="https://github.com/user-attachments/assets/5a59b48f-08d8-4230-892e-76080338b5c7" />
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/5a59b48f-08d8-4230-892e-76080338b5c7" width="300" alt="Hello Cat Android App Interface"/>
 </div>
+
+---
+
+### Hardware & Circuit Architecture
+
+| Component | Description / Wiring |
+| :--- | :--- |
+| **Microcontroller** | ATmega328P / Arduino Uno |
+| **Servo Motor** | MG995 high-torque servo connected to **Pin 8** (Powered by external 5V Supply) |
+| **Bluetooth Module** | HC-05 (TXD $\rightarrow$ **Pin 10**, RXD $\leftarrow$ Voltage Divider on **Pin 11**) |
+| **Limit Switch** | Connected to **Pin 2** (Triggering indicator LED logic) |
+| **Voltage Divider** | $22\,\text{k}\Omega$ + $10\,\text{k}\Omega$ resistors on signal line for 3.3V logic translation |
+| **Power Supply** | Dedicated external 5V power supply for the high-draw servo motor |
