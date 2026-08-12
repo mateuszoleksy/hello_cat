@@ -1,5 +1,5 @@
 # hello_cat
-Hello-cat project
+2018's Hello-cat project
 The "Hello Cat" project is based on Arduino, specifically using the Atmega328P microcontroller. The project represents automatic feeding machine for cats/dogs. The circuit includes the following components:
 
 - HC-05 Bluetooth module
